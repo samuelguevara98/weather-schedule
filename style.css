@@ -18,7 +18,7 @@ body {
     outline: 0;
     font-size: 1.3rem;
     color: #fff;
-    padding: 7px 0;
+    padding: 20px 0px;
     background: transparent;
     transition: border-color 0.2s;
   }
@@ -29,6 +29,12 @@ body {
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
   }
   
   .form__label {
@@ -44,17 +50,19 @@ body {
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
-    border-image: linear-gradient(to right, #EFF1F3, #FDE74C);
+    border-image: linear-gradient(to right, #EFF1F3, rgb(115, 115, 212));
     border-image-slice: 1;
   }
   .form__field:focus ~ .form__label {
     position: absolute;
-    top: 0;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #11998e;
     font-weight: 700;
+    top: 10%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
   }
   
   /* reset input */
@@ -176,4 +184,14 @@ body {
     transform: translate(-10%, 50%);
     opacity: 0;
   }
+}
+
+#weatherLetters {
+  padding: 125px;
+}
+
+.btn {
+  text-align: center;
+  margin: auto;
+  display: block;
 }

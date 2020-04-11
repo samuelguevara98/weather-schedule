@@ -15,7 +15,7 @@
 </head>
 <body>
     <!--Top-->
-    <div class="container">
+    <div class="container" id="weatherLetters">
         <h3 class="center" style="margin-bottom: 20px; color: white; font-family: gotu;">Weather Forecast      <i class="material-icons medium hide-on-small-only" id="icons">nights_stay</i></h3>
     </div>
     
@@ -24,7 +24,9 @@
         <form>
             <div class="form__group field">
                 <input type="location" class="form__field" placeholder="keyword" name="name" id='name' required/>
-                <label for="name" class="form__label" >ENTER LOCATION</label>
+                <label for="name" class="form__label white-text" >ENTER LOCATION</label>
+                <br>
+                <button class="btn waves-effect waves-light N/A transparent hoverable" type="submit" name="action">SEARCH</button>
             </div>
         </form>
     </div>
