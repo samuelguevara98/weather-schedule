@@ -1,15 +1,23 @@
-var input = document.getElementById("name")
-
-$(document).ready(function(){
-    $("#name").keypress(function(e)
-    {
-        if(e.which ===  13) {
-            alert('You pressed enter!');
+$(document).ready(function){
+    $('#name').keypress(function(event){
+        
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            alert('You pressed a "enter" key in textbox');	
         }
-        event.preventDefault();
-    });
-  });
-  
+        event.stopPropagation();
+
+        let query = $("#keyword").val();
+
+        let remove_space = query.replace(/ /g,'-');
+
+        let url = `api.openweathermap.org/data/2.5/weather?q=${remove_space}&appid={your api key}`;
+
+        if (query !== ""){
+            
+        }
+    });    
+};
 /*
 var mode = "light";
 
