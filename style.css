@@ -33,7 +33,7 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #9b9b9b;
+    color: #d3d3d3;
   }
   
   .form__field:focus {
@@ -72,4 +72,10 @@
 
   input [type="location"]::placeholder { 
     text-align: center; 
+}
+
+.spaced {
+    padding: 40px;
+    text-align: justify;
+    margin-top: 20px;
 }
