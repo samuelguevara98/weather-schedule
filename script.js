@@ -7,9 +7,11 @@ $(document).ready(function(){
   
         let query = $("#searchquery").val()
         
-        let url = "https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid=6b9dd327d5f0228f42ef746e3e9580c7";
+        let remove_space = query.replace(/ /g,'-');
+
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${remove_space}&units=imperial&appid=6b9dd327d5f0228f42ef746e3e9580c7`;
         
-        if (query !== ""){
+        if (remove_space !== ""){
   
             $.ajax({
                 url: url,
@@ -23,18 +25,21 @@ $(document).ready(function(){
                     $("#loader").hide();
                 },
 
-                success: function(main){
+                success: function(data){
                 let output = "";
-                let weatherForecast = main;
+                let weatherForecast = data.weather;
+                let weatherMain = data.main;
   
                 for(var x in weatherForecast){
                     output +=`
                     <div class="row">
                     <div class="col s12 m5">
-                      <div class="card-panel teal">
-                        <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                        </span>
+                      <div class="card-panel blue-grey darken-4">
+                        <span class="white-text">${weatherForecast[x].main}</span>
+                        <br>
+                        <span class="white-text">${weatherForecast[x].description}</span>
+                        <br>
+                        <span class="white-text">${data.main.temp}&#176;F</span>
                       </div>
                     </div>
                   </div>
@@ -46,12 +51,12 @@ $(document).ready(function(){
   
                     }else{
 
-                        let NoResults = "Sorry, there seems to be no results for - "+query+" -.";
-                        $("#weatherResults").html(NoResults);
+                        $("#weatherResults").html("<div style='font-size:40px; text-align:center;'><font color='red'>No results were found for - "+query+" -</font></div><br><br>");
+
                     }
                 },
                 error: function(){
-                    console.log("error");
+                    $("#weatherResults").html("<div style='font-size:40px; text-align:center; background-color: black; border-radius: 25px;'><font color='white'>No results were found for ' "+query+" '</font></div><br><br>");
                 }
             })
   

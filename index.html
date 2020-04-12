@@ -17,15 +17,15 @@
 <body>
     <!--Top-->
     <div class="container" id="weatherLetters">
-        <h3 class="center" style="margin-bottom: 20px; color: white; font-family: gotu; font-size:3.5vw">Weather Forecast  <i class="material-icons medium hide-on-small-only" id="icons" style="font-size:3.5vw">nights_stay</i></h3>
+        <h3 class="center" spellcheck="false" style="margin-bottom: 20px; color: white; font-family: gotu; font-size:3.5vw">Weather Forecast  <i class="material-icons medium hide-on-small-only" id="icons" style="font-size:3.5vw">nights_stay</i></h3>
     </div>
     
     <!--Search Form-->
     <div class="container">
         <form>
-            <div class="form__group field">
-                <input type="location" class="form__field" placeholder="keyword" name="name" id="searchquery" required/>
-                <label for="name" class="form__label white-text" >ENTER LOCATION</label>
+            <div class="form__group field" id="borderBox">
+                <input autocomplete="off" type="location" class="form__field" placeholder="keyword" name="name" id="searchquery" required/>
+                <label for="name" class="form__label white-text N/A transparent" >ENTER LOCATION</label>
                 <br>
                 <button class="btn waves-effect waves-light N/A transparent hoverable" type="submit" name="action" id="searchBtn">SEARCH</button>
             </div>

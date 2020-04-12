@@ -59,6 +59,7 @@ body {
     border-width: 3px;
     border-image: linear-gradient(to right, #EFF1F3, rgb(115, 115, 212));
     border-image-slice: 1;
+    border-image-repeat: repeat;
   }
   .form__field:focus ~ .form__label {
     position: absolute;
@@ -208,4 +209,10 @@ body {
 #weatherResults {
   position: absolute;
   top: 400px;
+}
+
+#loader {
+  padding: 10px;
+  position: absolute;
+  top: 380px;
 }
