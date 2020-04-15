@@ -7,9 +7,9 @@ $(document).ready(function(){
   
         let query = $("#searchquery").val()
         
-        let remove_space = query.replace(/ /g,'-');
+        let remove_space = query.replace(/ /g,'+');
 
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${remove_space}&units=imperial&appid=6b9dd327d5f0228f42ef746e3e9580c7`;
+        let url = `https://api.openweathermap.org/data/2.5/forecast?q=${remove_space}&units=imperial&appid=6b9dd327d5f0228f42ef746e3e9580c7`;
         
         if (remove_space !== ""){
   
@@ -27,22 +27,23 @@ $(document).ready(function(){
 
                 success: function(data){
                 let output = "";
-                let weatherForecast = data.weather;
-                let weatherMain = data.main;
-  
+                let weatherForecast = data.list;
+                let weatherMain = data.list.main;
+
+
                 for(var x in weatherForecast){
                     output +=`
                     <div class="row">
                     <div class="col s12 m5">
                       <div class="card-panel blue-grey darken-4">
-                        <span class="white-text">${weatherForecast[x].main}</span>
+                        <span class="white-text">${weatherForecast[x].main.temp}</span>
                         <br>
-                        <span class="white-text">${weatherForecast[x].description}</span>
+                        <span class="white-text">${weatherForecast[x].weather.description}</span>
                         <br>
-                        <span class="white-text">${data.main.temp}&#176;F</span>
+                        <span class="white-text">${weatherForecast[x].dt}</span>
                       </div>
                     </div>
-                  </div>
+                    </div>
                     `
                         ;
                     }
@@ -67,4 +68,5 @@ $(document).ready(function(){
   
     });
   });
+  
   
