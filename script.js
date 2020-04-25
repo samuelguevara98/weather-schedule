@@ -35,11 +35,7 @@ $(document).ready(function(){
             return today;
           }
 
-        function tomorrowsDate(){
-          var today = new Date();
-          var tomorrowsDate = (my_date .getDate()+1)
-          return tomorrowsDate;
-        }
+        
         
         if (remove_space !== ""){
   
@@ -66,10 +62,10 @@ $(document).ready(function(){
                     <div class="row">
                     <div class="column left">
                         <p>${getDate()}</p>
-                        <h6>${data.city.name}, ${data.city.country}</h6>
+                        <p>${data.city.name}, ${data.city.country}<p>
                         <p id="weatherTemp"><strong>${weatherForecast[x].main.temp}<sup>o</sup>F</strong></p>
                         <p><img src="http://openweathermap.org/img/wn/${weatherForecast[0].weather[0].icon}@2x.png" alt="weather icon"></p>
-                        <p>Humidity: ${weatherForecast[x].main.humidity}</p>
+                        <p>Humidity: ${weatherForecast[x].main.humidity}%</p>
                         <p>Wind Speed: ${weatherForecast[0].wind.speed}</p>
                         <p>UV Index</p>
                     </div>
@@ -78,35 +74,35 @@ $(document).ready(function(){
                         <p>${weatherForecast[5].main.temp}<sup>o</sup>F</p>
                         <p><img src="http://openweathermap.org/img/wn/${weatherForecast[5].weather[0].icon}@2x.png" alt="weather icon"></p>
                         <p>${weatherForecast[5].weather[0].main}</p>
-                        <p>Humidity</p>
+                        <p>Humidity: ${weatherForecast[5].main.humidity}%</p>
                       </div>
                       <div class="column right">
                         <p class="dow">Wed</p>
                         <p>${weatherForecast[4].main.temp}<sup>o</sup>F</p>
                         <p><img src="http://openweathermap.org/img/wn/${weatherForecast[4].weather[0].icon}@2x.png" alt="weather icon"></p>
                         <p>${weatherForecast[4].weather[0].main}</p>
-                        <p>Humidity</p>
+                        <p>Humidity: ${weatherForecast[4].main.humidity}%</p>
                       </div>
                       <div class="column right cgrey">
                         <p class="dow">Tue</p>
                         <p>${weatherForecast[3].main.temp}<sup>o</sup>F</p>
                         <p><img src="http://openweathermap.org/img/wn/${weatherForecast[3].weather[0].icon}@2x.png" alt="weather icon"></p>
                         <p>${weatherForecast[3].weather[0].main}</p>
-                        <p>Humidity</p>
+                        <p>Humidity: ${weatherForecast[3].main.humidity}%</p>
                       </div>
                       <div class="column right">
                         <p class="dow">Mon</p>
                         <p>${weatherForecast[2].main.temp}<sup>o</sup>F</p>
                         <p><img src="http://openweathermap.org/img/wn/${weatherForecast[2].weather[0].icon}@2x.png" alt="weather icon"></p>
                         <p>${weatherForecast[2].weather[0].main}</p>
-                        <p>Humidity</p>
+                        <p>Humidity: ${weatherForecast[2].main.humidity}%</p>
                       </div>
                       <div class="column right cgrey">
                         <p class="dow">Sat</p>
                         <p>${weatherForecast[1].main.temp}<sup>o</sup>F</p>
                         <p><img src="http://openweathermap.org/img/wn/${weatherForecast[1].weather[0].icon}@2x.png" alt="weather icon"></p>
                         <p>${weatherForecast[1].weather[0].main}</p>
-                        <p>Humidity</p>
+                        <p>Humidity: ${weatherForecast[1].main.humidity}%</p>
                       </div>
                     `;
                     }
